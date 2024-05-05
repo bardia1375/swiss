@@ -4,10 +4,15 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 import React, {  useLayoutEffect, useRef } from 'react';
 import styled from 'styled-components';
 
-import img1 from '../assets/Images/11.webp';
-import img2 from '../assets/Images/12.webp';
-import img3 from '../assets/Images/13.webp';
-import img4 from '../assets/Images/14.webp';
+import img2 from '../assets/Images/handlingMilk.jpeg';
+import img1 from '../assets/Images/ingredientMilk.jpeg';
+import img3 from '../assets/Images/Curdling.jpeg';
+import img4 from '../assets/Images/CurdProcessing.jpeg';
+import img5 from '../assets/Images/Pre-curdling.jpeg';
+import img6 from '../assets/Images/ShapingPressing.jpeg';
+import img7 from '../assets/Images/BrineBath.jpeg';
+import img8 from '../assets/Images/Maturation.jpeg';
+import img9 from '../assets/Images/Quality.jpeg';
 
 const Section = styled.section`
   min-height: 100vh;
@@ -33,13 +38,10 @@ const Overlay = styled.div`
   height: 90vh;
   box-shadow: 0 0 0 5vw ${(props) => props.theme.text};
   border: 3px solid black;
-
   z-index: 11;
-
   @media (max-width: 70em) {
   width: 40vw;
-
-    height: 80vh;
+  height: 80vh;
   }
 
   @media (max-width: 64em) {
@@ -101,10 +103,9 @@ const Title = styled(motion.h1)`
   /* text-transform: capitalize; */
   color: ${(props) => props.theme.body};
   text-shadow: 1px 1px 1px ${(props) => props.theme.text};
-
+  
   position: absolute;
-  top: 2rem;
-  left: 1rem;
+  top: 1rem;
   z-index: 15;
 
   @media (max-width: 64em) {
@@ -140,22 +141,27 @@ const Item = styled.div`
   justify-content: center;
   align-items: center;
   margin: 2rem 0;
-
-  h2 {
+  
+  h3 {
+    font-family:0.7rem;
   }
+p{
+  font-family:0.5rem;
 
+}
   img {
     width: 100%;
     height: auto;
     z-index: 5;
+    border-radius:8px;
   }
 `;
 const Photos = ({ img, title ,description}) => {
   return (
     <Item>
       <img width="400" height="600" src={img} alt={title} />
-      <h3>{title}</h3>
-      <p>{description}</p>
+      <h3 style={{fontFamily:"0.75rem",marginTop:"8px",whiteSpace:"noWrap"}}>{title}</h3>
+      <p style={{fontFamily:"0.5rem",textAlign:"justify"}}>{description}</p>
     </Item>
   );
 };
@@ -171,7 +177,7 @@ const NewArrival = () => {
     let element = ref.current;
 
     let scrollingElement = ScrollingRef.current;
-let t1= gsap.timeline();
+    let t1= gsap.timeline();
     setTimeout(() => {
       let mainHeight = scrollingElement.scrollHeight;
       element.style.height = `calc(${mainHeight / 8}px)`;
@@ -221,11 +227,11 @@ let t1= gsap.timeline();
   {img:img2 ,title:"2.	Milk selection and milk handling",description:"Upon delivery, the milk is first tested for its quality and then filtered. Unpasteurised milk is tested rigorously – if no unpasteurised cheese is to be produced, the milk is gently thermised or pasteurised.    "},
   {img:img3 ,title:"3.	Curdling the milk",description:"The milk is poured into the vat and stirred as it is gradually heated. The lactic acid bacteria and rennet are then added to begin the coagulation process. This curdling results in a gelatinous substance."},
   {img:img4 ,title:"4.	Curd processing",description:"Now the cheese harp is introduced: it is used to cut the curd into small pieces. These pieces of curd determine the type of cheese they will become – the smaller the pieces, the harder the final cheese will be."},
-  {img:img3 ,title:"5.	Pre-curdling",description:"The curds are stirred and heated up – the harder the cheese is to be, the higher the temperature. Thus, the cheese becomes increasingly solid."},
-  {img:img2 ,title:"6.	Shaping and pressing",description:"Once the desired solidity level has been reached, the cheese is poured into a mould. The holes in the base of the mould allow the whey to escape. In addition, the entire cheese is compressed to remove additional liquid."},
-  {img:img3 ,title:"7.	Brine bath",description:"The brine bath is the next step: the floating cheese absorbs the salt and releases whey. The rind forms gradually and the flavour of the cheese becomes more intense."},
-  {img:img4 ,title:"8.	Maturation and affinage",description:"The cheese undergoes several changes during maturation in the cellar: the rind develops, the inside of the cheese changes colour, holes are formed and the cheese solidifies. An affineur often refines the cheese by rubbing in herbs, cider or white wine."},
-  {img:img1,title:"9.	Quality control",description:"The final step sees the cheese undergo various tests. They include inspections of the hole formation, the cheese quality, the taste and the external appearance. Then the cheese is ready to be sold."},
+  {img:img5 ,title:"5.	Pre-curdling",description:"The curds are stirred and heated up – the harder the cheese is to be, the higher the temperature. Thus, the cheese becomes increasingly solid."},
+  {img:img6 ,title:"6.	Shaping and pressing",description:"Once the desired solidity level has been reached, the cheese is poured into a mould. The holes in the base of the mould allow the whey to escape. In addition, the entire cheese is compressed to remove additional liquid."},
+  {img:img7 ,title:"7.	Brine bath",description:"The brine bath is the next step: the floating cheese absorbs the salt and releases whey. The rind forms gradually and the flavour of the cheese becomes more intense."},
+  {img:img8 ,title:"8.	Maturation and affinage",description:"The cheese undergoes several changes during maturation in the cellar: the rind develops, the inside of the cheese changes colour, holes are formed and the cheese solidifies. An affineur often refines the cheese by rubbing in herbs, cider or white wine."},
+  {img:img9,title:"9.	Quality control",description:"The final step sees the cheese undergo various tests. They include inspections of the hole formation, the cheese quality, the taste and the external appearance. Then the cheese is ready to be sold."},
 
 
 ]
@@ -235,7 +241,7 @@ let t1= gsap.timeline();
       <Overlay />
 
       <Title
-        data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal"
+        data-scroll-direction="horizontal"
       >
         How Swiss cheese is made
       </Title>

@@ -81,7 +81,7 @@ const Text = styled(motion.span)`
   font-size: ${(props) => props.theme.fontxl};
   color: ${(props) => props.theme.text};
   padding-top: 0.5rem;
-
+  width:100%;
   @media (max-width: 48em) {
     font-size: ${(props) => props.theme.fontlg};
 
@@ -114,7 +114,7 @@ const Loader = () => {
         </g>
       </svg>
       <Text variants={textVariants} initial="hidden" animate="visible">
-      سفارت سوییس با همکاری ایستگاه برگزار میکند
+      .سفارت سوییس با مشارکت موسسه فرهنگی هنری ایستگاه برگزار میکند
       </Text>
     </Container>
   );

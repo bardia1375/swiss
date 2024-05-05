@@ -29,7 +29,6 @@ const MenuBtn = styled.li`
   color: ${(props) => props.theme.body};
   width: 15rem;
   height: 2.5rem;
-
   border: none;
   outline: none;
 
@@ -71,10 +70,8 @@ const MenuItems = styled(motion.ul)`
   justify-content: space-around;
   align-items: center;
   list-style: none;
-
   width: 100%;
   padding: 0 10rem;
-
   @media (max-width: 40em) {
     flex-direction:column;
     padding:2rem 0;
@@ -147,7 +144,13 @@ const Navbar = () => {
         >
           <Link to="/">shop</Link>
         </Item>
-
+        <Item
+          whileHover={{ scale: 1.1, y: -5 }}
+          whileTap={{ scale: 0.9, y: 0 }}
+          onClick={() => handleScroll('#shop2')}
+        >
+          <Link to="/">shop2</Link>
+        </Item>
         <Item
           whileHover={{ scale: 1.1, y: -5 }}
           whileTap={{ scale: 0.9, y: 0 }}

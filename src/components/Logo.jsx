@@ -75,7 +75,7 @@ const Logo = () => {
   return (
     <Container>
       <Link to="/">
-        {/* <img src={star} alt="Wibe Fashion" /> */}
+        {/* <img src={star} alt="Wibe Fashion" />
         <svg
           xmlns="http://www.w3.org/2000/svg"
           enableBackground="new 0 0 24 24"
@@ -96,7 +96,7 @@ const Logo = () => {
 
         <Text variants={textVariants} initial="hidden" animate="visible">
           Wibe Studio
-        </Text>
+        </Text> */}
       </Link>
     </Container>
   );

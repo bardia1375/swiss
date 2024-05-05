@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-import img1 from "../assets/Images/1.webp";
-import img2 from "../assets/Images/2.webp";
+// import img1 from "../assets/Images/1.webp";
+import img2 from "../assets/Images/raclette.webp";
 import img3 from "../assets/Images/3.webp";
+import img7 from '../assets/Images/ingredientMilk.jpeg';
+import img1 from "../assets/Images/raclette.webp";
 
 const Section = styled.section`
   min-height: 100vh;
@@ -31,7 +33,7 @@ const Left = styled.div`
   position: relative;
   z-index: 5;
   margin-top: 20%;
-
+  text-align:justify;
   @media (max-width: 64em) {
     width: 80%;
 
@@ -113,7 +115,7 @@ const Title = styled.h1`
   font-family: "Kaushan Script";
   font-weight: 300;
   /* text-transform: capitalize; */
-
+  color:#fff;
   position: absolute;
   top: 1rem;
   left: 5%;
@@ -144,11 +146,10 @@ const About = () => {
         About Us
       </Title>
       <Left data-scroll data-scroll-sticky data-scroll-target="#fixed-target">
-      غذا راهی مستقیم بهسوی شناخت هویت فرهنگی مردم است. سفری به میان عادات و مسلکهای هر قوم که هزاران سال در میان آن مردم ریشه دوانده و هنوز پابرجاست؛ بهمانند درختی کهنسال با تنهای تنومند. در ایران، فرهنگ غذایی، باورها و رسوم متنوع مردم را در خود جایداده و میتوان شئون فرهنگی مردمان ایران را دریافت.
-پنیر بهمانند بسیاری از غذاها در خود تاریخ ایران را دارد، رفتار اقوام ایران را نشان میدهد. آینهای تمامقد است که میتوان با آن ایران کهن را شناخت. در میان اساطیر ایران و کتب کهن بارها به اهمیت پنیر اشاره شده است.
-"یکم هست برتر از تو درخت آسوری
-از شیر من پنیر باشد و افروشه برای کاخ شاهی"
-این ابیات داستان جدال بین درخت نخل و بز در رسالهای کهن مربوط به زمان ساسانیان است که درخت خطاب به بز از برتریها و دانش خود سخن میگوید و بز در پاسخ به اهمیت و نفعش برای مردمان ایران میپردازد. در تمامی ادوار تاریخ ایران به اهمیت پنیر پرداختهاند و این نکته که این غذا در میان ایرانیان تداوم داشته است پرداختهاند. در ایران سنت پنیرسازی، هنری است مردمی، جمعی و نقش تک تک افراد روستا در آن نقش دارد؛ در ایران از قدیم سنت همکاری و مشارکت در امور میان مردم رواج داشته است؛ از این رو است که نام پنیرها مختص به فرد یا گروه خاصی نیست و از روی نام شهر و یا منطقهها پنیرها نامگذاری میشوند؛ هنگامیکه یک پنیر را مزه میکنیم و یا دربارهی آن میخوانیم و میشنویم، مانند سفری به میان آن منطقه و مردم آنجاست.
+Food, the silent narrator of cultural identities, takes us on a journey through the entrenched habits and professions of diverse peoples. It stands as an ancient tree, its robust trunk bearing witness to thousands of years of human history.
+In Iran, the culinary culture is a tapestry woven with various beliefs and customs, offering a window into the cultural affairs of its people. Cheese, like many foods, carries the history of Iran within its curds. It serves as a full-length mirror reflecting ancient Iran. Its importance has been echoed time and again in Iranian mythology and ancient texts.
+Consider the verses from an ancient Sassanid treatise, where a palm tree and a goat engage in a discourse of superiority and wisdom. The goat, in its humble wisdom, speaks of its milk turning into cheese, a staple for the royal palace. This dialogue underscores the significance of cheese in Iran’s history, a tradition that continues to thrive among Iranians. Cheese-making in Iran is a communal art, a testament to the tradition of cooperation and participation prevalent since ancient times. This is why cheeses bear the names of cities or regions, not individuals. Each taste, each story about a cheese, is a journey to that region and its people.
+
       </Left>
 
       <Right>
@@ -157,7 +158,7 @@ const About = () => {
           width="400"
           height="600"
           className="small-img-1"
-          src={img2}
+          src={img7}
           alt="About Us"
           data-scroll
           data-scroll-speed="5"
@@ -166,7 +167,7 @@ const About = () => {
           width="400"
           height="600"
           className="small-img-2"
-          src={img3}
+          src={img2}
           alt="About Us"
           data-scroll
           data-scroll-speed="-2"

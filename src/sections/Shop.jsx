@@ -4,8 +4,8 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
-import img1 from "../assets/Images/1.webp";
-import img2 from "../assets/Images/2.webp";
+import img1 from "../assets/Images/4High.png";
+import img2 from "../assets/Images/4.png";
 import img3 from "../assets/Images/3.webp";
 import img4 from "../assets/Images/4.webp";
 import img5 from "../assets/Images/5.webp";
@@ -41,7 +41,7 @@ const Title = styled.h1`
   text-shadow: 1px 1px 1px ${(props) => props.theme.body};
 
   position: absolute;
-  top: 1rem;
+  top: 2rem;
   left: 5%;
   z-index: 11;
 
@@ -66,7 +66,7 @@ const Left = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
+  padding:0 4px;
   p {
     font-size: ${(props) => props.theme.fontlg};
     font-weight: 300;
@@ -81,7 +81,7 @@ const Left = styled.div`
   }
 
   @media (max-width: 48em) {
-    width: 40%;
+    width: 30%;
     p {
       font-size: ${(props) => props.theme.fontsm};
     }
@@ -104,6 +104,16 @@ const Right = styled.div`
   align-items: center;
 `;
 
+
+const ImgModal=styled.img`
+border-radius:24px;
+overflow:hidden;
+height:40vh;
+width:100%;
+    @media (max-width: 48em) {
+      height:40vh;
+  }
+`
 const Item = styled(motion.div)`
   display: inline-block;
   width: 20rem;
@@ -135,6 +145,7 @@ const Product = ({ img, title = "",index,openModal }) => {
     <Item
       initial={{ filter: "grayscale(100%)" }}
       whileInView={{ filter: "grayscale(0%)" }}
+      
       transition={{ duration: 0.5 }}
       viewport={{ once: false, amount: "all" }}
       onClick={handleClick}
@@ -152,19 +163,41 @@ const Shop = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const scrollRef = useRef(null);
 
- const cheeses= [
-  { img: img3, title: 'Sweatshirts', index: 4 },
-  { img: img4, title: 'Ethnic Wear', index: 1 },
-  { img: img1, title: 'Man Basics', index: 2 },
-  { img: img2, title: 'Tops', index: 3 },
-  { img: img5, title: 'Blazers', index: 4 },
-  { img: img6, title: 'Suits', index: 5 },
-  { img: img7, title: 'Antiques', index: 6 },
-  { img: img8, title: 'Jewellery', index: 7 },
-  { img: img9, title: 'Watches', index: 8 },
-  { img: img10, title: 'Cheddar cheese', index: 9 },
+ const IranianCheeses= [
+  { img: img1, title: 'Raclette', index: 4 },
+  { img: img2, title: 'Raclette1', index: 1 },
+  { img: img2, title: 'Raclette2', index: 2 },
+  { img: img2, title: 'Raclette3', index: 3 },
+  { img: img2, title: 'Raclette4', index: 4 },
+  { img: img2, title: 'Raclette5', index: 5 },
+  { img: img2, title: 'Raclette6', index: 6 },
+  { img: img2, title: 'Raclette7', index: 7 },
+  { img: img2, title: 'Raclette8', index: 8 },
+  { img: img2, title:'Raclette9', index: 9 },
 ];
+const SwissCheeses= [
+  { img: img2, title: 'Raclette', index: 4 },
+  { img: img2, title: 'Raclette1', index: 1 },
+  { img: img2, title: 'Raclette2', index: 2 },
+  { img: img2, title: 'Raclette3', index: 3 },
+  { img: img2, title: 'Raclette4', index: 4 },
+  { img: img2, title: 'Raclette5', index: 5 },
+  { img: img2, title: 'Raclette6', index: 6 },
+  { img: img2, title: 'Raclette7', index: 7 },
+  { img: img2, title: 'Raclette8', index: 8 },
+  { img: img2, title:'Raclette9', index: 9 },
+];
+const [cheeses,setCheeses]=useState(SwissCheeses)
+const [isSwiss,setIsSwiss]=useState(true)
+useEffect(()=>{
+  if(isSwiss){
+    setCheeses(SwissCheeses)
 
+  }else{
+    setCheeses(IranianCheeses)
+
+  }
+},[isSwiss])
   const openModal = (index) => {
     console.log("index123",index);
     setSelectedIndex(index);
@@ -260,7 +293,7 @@ const Shop = () => {
   return (
     <Section ref={ref} id="shop">
      <Modal showModal={showModal} closeModal={closeModal} selectedIndex={selectedIndex} >
-       <img style={{borderRaduis:"8px",overflow:"hidden",height:"30vh",width:"100%"}} src={cheeses.length-1 &&cheeses[selectedIndex]?.img} />
+       <ImgModal  src={cheeses.length-1 &&cheeses[selectedIndex]?.img} />
        <h3>HISTORY: </h3>
        <p style={{fontSize:"1.5vh"}}>According to legend, Léon was the name of the Valais wine-grower who invented Raclette cheese. On a cold day, he warmed up a piece of cheese over an open log fire, rather than eating it raw, and this quintessential Valais delicacy was born.
 
@@ -278,12 +311,13 @@ Flavor: The alpine plants on which the cattle feed give their flavor to the Racl
      </Modal>
 
       <Title data-scroll data-scroll-speed="-1">
-        New Collection
+        {isSwiss? "Swiss Cheeses":"Iranina Cheeses"}
       </Title>
       <Left>
         <div>
-      <h1>{cheeses[activeIndex].title}</h1>
-     <p>Click on the photo to see more information</p></div>
+      <h2 onClick={()=>setIsSwiss(false)}>Iraninan Cheese</h2>
+      <h2 onClick={()=>setIsSwiss(true)}>Swiss Cheese</h2>
+      </div>
       </Left>
       <Right data-scroll ref={Horizontalref}>
     {cheeses.map((cheese)=>(
