@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/swiss/static/css/main.39a07ef7.css",
-    "main.js": "/swiss/static/js/main.287ae65d.js",
+    "main.js": "/swiss/static/js/main.163b8516.js",
     "static/js/534.ec7f0c0b.chunk.js": "/swiss/static/js/534.ec7f0c0b.chunk.js",
     "static/js/132.6ef39107.chunk.js": "/swiss/static/js/132.6ef39107.chunk.js",
     "static/js/716.7e7ad024.chunk.js": "/swiss/static/js/716.7e7ad024.chunk.js",
@@ -34,13 +34,13 @@
     "static/media/SwitzerlandLogo.png": "/swiss/static/media/SwitzerlandLogo.0156932edff1fa7b91b9.png",
     "index.html": "/swiss/index.html",
     "main.39a07ef7.css.map": "/swiss/static/css/main.39a07ef7.css.map",
-    "main.287ae65d.js.map": "/swiss/static/js/main.287ae65d.js.map",
+    "main.163b8516.js.map": "/swiss/static/js/main.163b8516.js.map",
     "534.ec7f0c0b.chunk.js.map": "/swiss/static/js/534.ec7f0c0b.chunk.js.map",
     "132.6ef39107.chunk.js.map": "/swiss/static/js/132.6ef39107.chunk.js.map",
     "716.7e7ad024.chunk.js.map": "/swiss/static/js/716.7e7ad024.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.39a07ef7.css",
-    "static/js/main.287ae65d.js"
+    "static/js/main.163b8516.js"
   ]
 }
