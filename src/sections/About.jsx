@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 // import img1 from "../assets/Images/1.webp";
-import img2 from "../assets/Images/raclette.webp";
+import img2 from "../assets/Images/pexels-pixabay-302457.jpg";
 import img3 from "../assets/Images/3.webp";
 import img7 from '../assets/Images/ingredientMilk.jpeg';
 import img1 from "../assets/Images/raclette.webp";

@@ -51,19 +51,19 @@ function App() {
           }
           containerRef={containerRef}
         >
-          {/* <AnimatePresence>{Loaded ? null : <Loader />}</AnimatePresence> */}
+          <AnimatePresence>{Loaded ? null : <Loader />}</AnimatePresence>
           <main className="App" data-scroll-container ref={containerRef}>
             <ScrollTriggerProxy />
             <AnimatePresence>
               {/* {Loaded ? null : <Loader />} */}
 
               <Home key="home" />
-              {/* <About key="about" /> */}
+              <About key="about" />
               <Shop key="Shop" />
               {/* <Shop key="Shop2" /> */}
 
               {/* <Marquee key="marquee" /> */}
-              <NewArrival key="new arrival" />
+              <NewArrival key="How to made" />
               <Footer key="Footer" />
             </AnimatePresence>
           </main>

@@ -4,17 +4,16 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
-import img1 from "../assets/Images/4High.png";
-import img2 from "../assets/Images/4.png";
-import img3 from "../assets/Images/3.webp";
-import img4 from "../assets/Images/4.webp";
-import img5 from "../assets/Images/5.webp";
-import img6 from "../assets/Images/6.webp";
-import img7 from "../assets/Images/7.webp";
-import img8 from "../assets/Images/8.webp";
-import img9 from "../assets/Images/9.webp";
-import img10 from "../assets/Images/pexels-pixabay-302457.jpg";
+import img1 from "../assets/Images/1.png";
+import img2 from "../assets/Images/2.png";
+// import img4 from "../assets/Images/3.png";
+import img3 from "../assets/Images/4.png";
+import img5 from "../assets/Images/5.png";
+import img6 from "../assets/Images/6.png";
+import img7 from "../assets/Images/7.png";
+import img8 from "../assets/Images/8.png";
 import Modal from "../components/Modal";
+import img4 from "../assets/Images/raclette.webp";
 
 const Section = styled(motion.section)`
   min-height: 100vh;
@@ -81,7 +80,7 @@ const Left = styled.div`
   }
 
   @media (max-width: 48em) {
-    width: 30%;
+    /* width: 30%; */
     p {
       font-size: ${(props) => props.theme.fontsm};
     }
@@ -115,15 +114,19 @@ width:100%;
   }
 `
 const Item = styled(motion.div)`
-  display: inline-block;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
   width: 20rem;
   /* background-color: black; */
-  margin-right: 6rem;
+  margin-right: 6rem;  
   img {
     width: 100%;
     height: auto;
     cursor: pointer;
   }
+ 
 
   h1 {
     font-weight: 500;
@@ -146,13 +149,15 @@ const Product = ({ img, title = "",index,openModal }) => {
       initial={{ filter: "grayscale(100%)" }}
       whileInView={{ filter: "grayscale(0%)" }}
       
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.4 }}
       viewport={{ once: false, amount: "all" }}
       onClick={handleClick}
+      
 
     >
       <img width="400" height="550" src={img} alt={title} onClick={()=>console.log("index",index)}/>
       <h1>{title}</h1>
+      <p>Click for more information</p>
     </Item>
   );
 };
@@ -164,28 +169,16 @@ const Shop = () => {
   const scrollRef = useRef(null);
 
  const IranianCheeses= [
-  { img: img1, title: 'Raclette', index: 4 },
-  { img: img2, title: 'Raclette1', index: 1 },
-  { img: img2, title: 'Raclette2', index: 2 },
-  { img: img2, title: 'Raclette3', index: 3 },
-  { img: img2, title: 'Raclette4', index: 4 },
-  { img: img2, title: 'Raclette5', index: 5 },
-  { img: img2, title: 'Raclette6', index: 6 },
-  { img: img2, title: 'Raclette7', index: 7 },
-  { img: img2, title: 'Raclette8', index: 8 },
-  { img: img2, title:'Raclette9', index: 9 },
+  { img: img5, title: 'Raclette4', index: 1 },
+  { img: img6, title: 'Raclette5', index: 2 },
+  { img: img7, title: 'Raclette6', index: 3 },
+  { img: img8, title: 'Raclette7', index: 4 },
 ];
 const SwissCheeses= [
-  { img: img2, title: 'Raclette', index: 4 },
-  { img: img2, title: 'Raclette1', index: 1 },
-  { img: img2, title: 'Raclette2', index: 2 },
-  { img: img2, title: 'Raclette3', index: 3 },
-  { img: img2, title: 'Raclette4', index: 4 },
-  { img: img2, title: 'Raclette5', index: 5 },
-  { img: img2, title: 'Raclette6', index: 6 },
-  { img: img2, title: 'Raclette7', index: 7 },
-  { img: img2, title: 'Raclette8', index: 8 },
-  { img: img2, title:'Raclette9', index: 9 },
+  { img: img1, title: 'Gruyère', index: 0 },
+  { img: img2, title: 'Tête de moine', index: 1 },
+  { img: img3, title: 'Raclette2', index: 2 },
+  { img: img4, title: 'Raclette', index: 3 },
 ];
 const [cheeses,setCheeses]=useState(SwissCheeses)
 const [isSwiss,setIsSwiss]=useState(true)
@@ -291,7 +284,7 @@ useEffect(()=>{
   //   };
   // }, [cheeses]);
   return (
-    <Section ref={ref} id="shop">
+    <Section ref={ref} id="Cheeses">
      <Modal showModal={showModal} closeModal={closeModal} selectedIndex={selectedIndex} >
        <ImgModal  src={cheeses.length-1 &&cheeses[selectedIndex]?.img} />
        <h3>HISTORY: </h3>
@@ -315,8 +308,8 @@ Flavor: The alpine plants on which the cattle feed give their flavor to the Racl
       </Title>
       <Left>
         <div>
-      <h2 onClick={()=>setIsSwiss(false)}>Iraninan Cheese</h2>
-      <h2 onClick={()=>setIsSwiss(true)}>Swiss Cheese</h2>
+      {/* <h2 onClick={()=>setIsSwiss(false)}>Iraninan Cheese</h2> */}
+      <h2 onClick={()=>setIsSwiss(true)} style={{textAlign:"center"}}>Click on photo for details</h2>
       </div>
       </Left>
       <Right data-scroll ref={Horizontalref}>

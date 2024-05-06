@@ -3,7 +3,9 @@ import React from "react";
 import { useLocomotiveScroll } from "react-locomotive-scroll";
 import styled from "styled-components";
 
-import Logo from "../assets/Svgs/star_white_48dp.svg";
+import Logo from "../assets/Images/SwitzerlandLogo.png";
+import LogoFooter from "../assets/Images/switzercheese.jpeg";
+
 
 const Section = styled.section`
   min-height: 100vh;
@@ -28,18 +30,19 @@ const LogoContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  
   img {
-    width: 10vw;
+    width: 16vw;
     height: auto;
   }
 
-  h3 {
+  h4 {
     font-family: "Kaushan Script";
     font-size: ${(props) => props.theme.fontxxl};
-
+text-align:center;
     @media (max-width: 48em) {
-      font-size: ${(props) => props.theme.fontxl};
+      font-size: 1rem;
+      margin-top;8px;
     }
   }
 `;
@@ -57,7 +60,7 @@ const FooterComponent = styled(motion.footer)`
     align-items: center;
     flex-wrap: wrap;
     margin: 2rem;
-    margin-top: 4rem;
+    margin-top: 2rem;
     padding: 0 1rem;
     border-top: 1px solid ${(props) => props.theme.text};
     border-bottom: 1px solid ${(props) => props.theme.text};
@@ -86,7 +89,7 @@ const FooterComponent = styled(motion.footer)`
 
 const Bottom = styled.div`
   padding: 0.5rem 0;
-  margin: 0 4rem;
+  margin:  4rem;
   font-size: ${(props) => props.theme.fontlg};
 
   display: flex;
@@ -126,17 +129,29 @@ const Footer = () => {
   return (
     <Section>
       <LogoContainer>
+<div style={{display:"flex",gap:"8px"}}>
         <img
-          width="300"
-          height="300"
+          width="500"
+          height="500"
           src={Logo}
           alt="Wibe"
           data-scroll
           data-scroll-speed="2"
         />
-        <h3 data-scroll data-scroll-speed="-1">
-          Wibe Studio
-        </h3>
+        <img
+          width="500"
+          height="500"
+          src={Logo}
+          alt="Wibe"
+          data-scroll
+          data-scroll-speed="2"
+        /></div>
+        <h4 data-scroll data-scroll-speed="-1">
+        سفارت سوییس 
+        </h4>
+        <h4 data-scroll data-scroll-speed="-1">
+             موسسه فرهنگی هنری ایستگاه
+        </h4>
       </LogoContainer>
       <FooterComponent
         initial={{ y: "-400px" }}
@@ -153,28 +168,27 @@ const Footer = () => {
           <li aria-hidden="true" onClick={() => handleScroll(".about")}>
             about
           </li>
-          <li aria-hidden="true" onClick={() => handleScroll("#shop")}>
-            shop
+          <li aria-hidden="true" onClick={() => handleScroll("#Cheeses")}>
+          Cheeses
           </li>
-          <li aria-hidden="true" onClick={() => handleScroll("#shop2")}>
-            shop2
-          </li>
+
           <li aria-hidden="true" onClick={() => handleScroll(".new-arrival")}>
-            new arrival
+            How to made
           </li>
-          <li>
-            <a href="https://google.com" target={"_blank"} rel="noreferrer">
-              look book
-            </a>
-          </li>
-          <li>
-            <a href="https://google.com" target={"_blank"} rel="noreferrer">
-              reviews
-            </a>
-          </li>
+
         </ul>
         <Bottom>
-          <span
+        <img
+          width="500"
+          height="500"
+          src={LogoFooter}
+          alt="Wibe"
+          data-scroll
+          data-scroll-speed="2"
+          style={{width:"200px",height:"100px"}}
+        />
+        
+          {/* <span
             data-scroll
             data-scroll-speed="2"
             data-scroll-direction="horizontal"
@@ -194,7 +208,7 @@ const Footer = () => {
             >
               CodeBucks
             </a>
-          </span>
+          </span> */}
         </Bottom>
       </FooterComponent>
     </Section>

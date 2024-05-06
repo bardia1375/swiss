@@ -85,7 +85,7 @@ const container = {
   show: {
     opacity: 1,
     transition: {
-      delayChildren: 5, // 2
+      delayChildren: 3, // 2
       staggerChildren: 0.3,
     },
   },
@@ -106,44 +106,11 @@ const CoverVideo = () => {
            <motion.h1
             variants={item}
             data-scroll
-            data-scroll-delay="0.19"
+            data-scroll-delay="0.13"
             data-scroll-speed="4"
           >
-            i
+            C
           </motion.h1>     
-          <motion.h1
-            variants={item}
-            data-scroll
-            data-scroll-delay="0.13"
-            data-scroll-speed="6"
-          >
-          s
-          </motion.h1>
- 
-          <motion.h1
-            variants={item}
-            data-scroll
-            data-scroll-delay="0.13"
-            data-scroll-speed="6"
-          >
-          t
-          </motion.h1>
-          <motion.h1
-            variants={item}
-            data-scroll
-            data-scroll-delay="0.13"
-            data-scroll-speed="6"
-          >
-          g
-          </motion.h1>
-          <motion.h1
-            variants={item}
-            data-scroll
-            data-scroll-delay="0.13"
-            data-scroll-speed="6"
-          >
-          a
-          </motion.h1>
           <motion.h1
             variants={item}
             data-scroll
@@ -152,16 +119,64 @@ const CoverVideo = () => {
           >
           h
           </motion.h1>
+ 
+          <motion.h1
+            variants={item}
+            data-scroll
+            data-scroll-delay="0.13"
+            data-scroll-speed="6"
+          >
+          e
+          </motion.h1>
+          <motion.h1
+            variants={item}
+            data-scroll
+            data-scroll-delay="0.13"
+            data-scroll-speed="6"
+          >
+          e
+          </motion.h1>
+          <motion.h1
+            variants={item}
+            data-scroll
+            data-scroll-delay="0.13"
+            data-scroll-speed="6"
+          >
+          s
+          </motion.h1>
+          <motion.h1
+            variants={item}
+            data-scroll
+            data-scroll-delay="0.13"
+            data-scroll-speed="6"
+          >
+          e
+          </motion.h1>
         </div>
-        <motion.h2
+        <div>             
+           <motion.h1
+            variants={item}
+            data-scroll
+            data-scroll-delay="0.19"
+            data-scroll-speed="4"
+            style={{fontSize:"3rem"}}
+          >
+            Istgah
+          </motion.h1>     
+
+ 
+
+
+        </div>
+        {/* <motion.h2
           style={{ alignSelf: "flex-end" }}
           variants={item}
           data-scroll
           data-scroll-delay="0.14"
           data-scroll-speed="2"
         >
-          chease
-        </motion.h2>
+          cheese
+        </motion.h2> */}
       </Title>
 
       <video src={MainVideo} type="video/mp4" autoPlay muted loop />
