@@ -5,10 +5,11 @@ import styled from "styled-components";
 
 import Logo from "../assets/Images/SwitzerlandLogo.png";
 import LogoFooter from "../assets/Images/switzercheese.jpeg";
+import IstgahLogo from "../assets/Images/imagecompressor 2/Untitled design-min.png";
 
 
 const Section = styled.section`
-  min-height: 100vh;
+  height: 100vh;
   width: 100%;
   /* margin: 5rem auto; */
 
@@ -129,23 +130,7 @@ const Footer = () => {
   return (
     <Section>
       <LogoContainer>
-<div style={{display:"flex",gap:"8px"}}>
-        <img
-          width="500"
-          height="500"
-          src={Logo}
-          alt="Wibe"
-          data-scroll
-          data-scroll-speed="2"
-        />
-        <img
-          width="500"
-          height="500"
-          src={Logo}
-          alt="Wibe"
-          data-scroll
-          data-scroll-speed="2"
-        /></div>
+
         <h4 data-scroll data-scroll-speed="-1">
         سفارت سوییس 
         </h4>
@@ -187,7 +172,26 @@ const Footer = () => {
           data-scroll-speed="2"
           style={{width:"200px",height:"100px"}}
         />
-        
+        <div style={{display:"flex",gap:"16px"}}>
+        <img
+          width="50"
+          height="50"
+          src={Logo}
+          alt="Wibe"
+          data-scroll
+          data-scroll-speed="2"
+          style={{width:"40px",height:"50px"}}
+        />
+        <img
+          width="50"
+          height="50"
+          src={IstgahLogo}
+          alt="Wibe"
+          data-scroll
+          data-scroll-speed="2"
+          style={{width:"50px",height:"50px"}}
+
+        /></div>
           {/* <span
             data-scroll
             data-scroll-speed="2"
@@ -209,6 +213,7 @@ const Footer = () => {
               CodeBucks
             </a>
           </span> */}
+          
         </Bottom>
       </FooterComponent>
     </Section>

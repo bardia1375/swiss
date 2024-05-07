@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 // import img1 from "../assets/Images/1.webp";
 import img2 from "../assets/Images/pexels-pixabay-302457.jpg";
-import img3 from "../assets/Images/3.webp";
 import img7 from '../assets/Images/ingredientMilk.jpeg';
 import img1 from "../assets/Images/raclette.webp";
 
@@ -53,8 +52,8 @@ const Left = styled.div`
   @media (max-width: 48em) {
     font-size: ${(props) => props.theme.fontmd};
   }
-  @media (max-width: 30em) {
-    font-size: ${(props) => props.theme.fontsm};
+  @media (max-width:  48em) {
+    font-size: 1.7vh;
     padding: 2rem;
     width: 70%;
   }
@@ -158,7 +157,7 @@ Consider the verses from an ancient Sassanid treatise, where a palm tree and a g
           width="400"
           height="600"
           className="small-img-1"
-          src={img7}
+          src={img2}
           alt="About Us"
           data-scroll
           data-scroll-speed="5"
@@ -167,7 +166,7 @@ Consider the verses from an ancient Sassanid treatise, where a palm tree and a g
           width="400"
           height="600"
           className="small-img-2"
-          src={img2}
+          src={img7}
           alt="About Us"
           data-scroll
           data-scroll-speed="-2"

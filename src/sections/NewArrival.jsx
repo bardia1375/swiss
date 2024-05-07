@@ -63,7 +63,7 @@ const Overlay = styled.div`
   @media (max-height: 800px) {
   width: 80vw;
 
-    height: 90vh;
+    height: 80vh;
   }
 `;
 
@@ -185,7 +185,7 @@ const NewArrival = () => {
         scrollTrigger: {
           trigger: element,
           start: 'top top',
-          end: 'bottom+=270% top-=130%',
+          end: 'bottom+=200% top-=100%',
           scroller: '.App', //locomotive-scroll
           scrub: 1,
           pin: true,

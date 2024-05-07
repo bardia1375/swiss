@@ -24,6 +24,7 @@ position:relative;
   padding:30px;
   max-height:800px;
   border-radius: 8px;
+
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   @media (max-width: 40em) {
     width:80vw;
@@ -73,6 +74,7 @@ const Modal = ({ showModal, closeModal, selectedIndex,children }) => {
             animate={{ scale: 1 }}
             exit={{ scale: 0 }}
             onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
+            onScroll={(e) => e.stopPropagation()}
           >
             <CloseButton onClick={closeModal}>X</CloseButton>
             {children}
