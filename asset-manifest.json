@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/swiss/static/css/main.39a07ef7.css",
-    "main.js": "/swiss/static/js/main.ee694630.js",
-    "static/js/534.ec7f0c0b.chunk.js": "/swiss/static/js/534.ec7f0c0b.chunk.js",
-    "static/js/132.6ef39107.chunk.js": "/swiss/static/js/132.6ef39107.chunk.js",
-    "static/js/716.7e7ad024.chunk.js": "/swiss/static/js/716.7e7ad024.chunk.js",
+    "main.js": "/swiss/static/js/main.babccf4a.js",
+    "static/js/534.93c7d50a.chunk.js": "/swiss/static/js/534.93c7d50a.chunk.js",
+    "static/js/132.37c10c46.chunk.js": "/swiss/static/js/132.37c10c46.chunk.js",
+    "static/js/716.e5f2963f.chunk.js": "/swiss/static/js/716.e5f2963f.chunk.js",
     "static/media/cheese.mp4": "/swiss/static/media/cheese.692bd876a8f7e2b99b21.mp4",
     "static/media/pexels-pixabay-302457.jpg": "/swiss/static/media/pexels-pixabay-302457.3df9ce625172ea94f606.jpg",
     "static/media/switzercheese.jpeg": "/swiss/static/media/switzercheese.a8837d268648018d3ea5.jpeg",
@@ -34,13 +34,13 @@
     "static/media/SwitzerlandLogo.png": "/swiss/static/media/SwitzerlandLogo.0156932edff1fa7b91b9.png",
     "index.html": "/swiss/index.html",
     "main.39a07ef7.css.map": "/swiss/static/css/main.39a07ef7.css.map",
-    "main.ee694630.js.map": "/swiss/static/js/main.ee694630.js.map",
-    "534.ec7f0c0b.chunk.js.map": "/swiss/static/js/534.ec7f0c0b.chunk.js.map",
-    "132.6ef39107.chunk.js.map": "/swiss/static/js/132.6ef39107.chunk.js.map",
-    "716.7e7ad024.chunk.js.map": "/swiss/static/js/716.7e7ad024.chunk.js.map"
+    "main.babccf4a.js.map": "/swiss/static/js/main.babccf4a.js.map",
+    "534.93c7d50a.chunk.js.map": "/swiss/static/js/534.93c7d50a.chunk.js.map",
+    "132.37c10c46.chunk.js.map": "/swiss/static/js/132.37c10c46.chunk.js.map",
+    "716.e5f2963f.chunk.js.map": "/swiss/static/js/716.e5f2963f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.39a07ef7.css",
-    "static/js/main.ee694630.js"
+    "static/js/main.babccf4a.js"
   ]
 }
