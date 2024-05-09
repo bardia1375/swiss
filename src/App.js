@@ -4,6 +4,7 @@ import { AnimatePresence } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 import { ThemeProvider } from "styled-components";
+import { LanguageProvider } from './context/LanguageContext';
 
 import Loader from "./components/Loader";
 import ScrollTriggerProxy from "./components/ScrollTriggerProxy";
@@ -15,7 +16,7 @@ import NewArrival from "./sections/NewArrival";
 import Shop from "./sections/Shop";
 import GlobalStyles from "./styles/GlobalStyles";
 import { dark } from "./styles/Themes";
-
+import "./styles/font.css"
 function App() {
   // useLocoScroll();
   const containerRef = useRef(null);
@@ -31,42 +32,44 @@ function App() {
     <>
       <GlobalStyles />
       <ThemeProvider theme={dark}>
-        <LocomotiveScrollProvider
-          options={{
-            smooth: true,
-            // ... all available Locomotive Scroll instance options
-            smartphone: {
+        <LanguageProvider>
+          <LocomotiveScrollProvider
+            options={{
               smooth: true,
-            },
-            tablet: {
-              smooth: true,
-            },
-          }}
-          watch={
-            [
-              //..all the dependencies you want to watch to update the scroll.
-              //  Basicaly, you would want to watch page/location changes
-              //  For exemple, on Next.js you would want to watch properties like `router.asPath` (you may want to add more criterias if the instance should be update on locations with query parameters)
-            ]
-          }
-          containerRef={containerRef}
-        >
-          <AnimatePresence>{Loaded ? null : <Loader />}</AnimatePresence>
-          <main className="App" data-scroll-container ref={containerRef}>
-            <ScrollTriggerProxy />
-            <AnimatePresence>
-              {Loaded ? null : <Loader />}
+              // ... all available Locomotive Scroll instance options
+              smartphone: {
+                smooth: true,
+              },
+              tablet: {
+                smooth: true,
+              },
+            }}
+            watch={
+              [
+                //..all the dependencies you want to watch to update the scroll.
+                //  Basicaly, you would want to watch page/location changes
+                //  For exemple, on Next.js you would want to watch properties like `router.asPath` (you may want to add more criterias if the instance should be update on locations with query parameters)
+              ]
+            }
+            containerRef={containerRef}
+          >
+            <AnimatePresence>{Loaded ? null : <Loader />}</AnimatePresence>
+            <main className="App" data-scroll-container ref={containerRef}>
+              <ScrollTriggerProxy />
+              <AnimatePresence>
+                {Loaded ? null : <Loader />}
 
-              <Home key="home" />
-              <About key="about" />
-              <Shop key="Shop" />
+                <Home key="home" />
+                <About key="about" />
+                <Shop key="Shop" />
 
-              {/* <Marquee key="marquee" /> */}
-              <NewArrival key="How to made" />
-              <Footer key="Footer" />
-            </AnimatePresence>
-          </main>
-        </LocomotiveScrollProvider>
+                {/* <Marquee key="marquee" /> */}
+                <NewArrival key="How to made" />
+                <Footer key="Footer" />
+              </AnimatePresence>
+            </main>
+          </LocomotiveScrollProvider>
+        </LanguageProvider>
       </ThemeProvider>
     </>
   );

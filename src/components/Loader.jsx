@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Logo from "../assets/Images/SwitzerlandLogo.png";
 import IstgahLogo from "../assets/Images/imagecompressor 2/Untitled design-min.png";
+import { useTranslation } from '../context/LanguageContext';
 
 
 const Container = styled(motion.div)`
@@ -94,6 +95,8 @@ const Text = styled(motion.span)`
 `;
 
 const Loader = () => {
+  const { t } = useTranslation();
+
   return (
     <Container
       initial={{ y: 0, opacity: 1 }}
@@ -101,9 +104,11 @@ const Loader = () => {
       transition={{ duration: 2 }}
     >
       {/* <img src={star} alt="Wibe Fashion" /> */}
-
+      <h2>{t('greeting')}</h2>
+      <p>{t('welcome')}</p>
       <Text variants={textVariants} initial="hidden" animate="visible">
-      Istgah with cooperation of the Swiss Embassy presents:      </Text>
+        
+      Istgah with cooperation of the Swiss Embassy presents:     </Text>
       <div style={{display:"flex",alignItems:"center",justifyContent:"center",marginTop:"16px",gap:"24px"}}>
       <img
           width="500"

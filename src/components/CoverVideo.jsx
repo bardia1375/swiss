@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 
 import MainVideo from "../assets/cheese3.mp4";
+import { useTranslation } from "../context/LanguageContext";
 
 const VideoContainer = styled.section`
   width: 100%;
@@ -32,7 +33,16 @@ const DarkOverlay = styled.div`
   z-index: 1;
   background-color: ${(props) => `rgba(${props.theme.bodyRgba},0.6)`};
 `;
+const Button = styled.div`
+  /* background-color:#000; */
+  position:absolute;
+  color:#fff;
+  z-index:100;
+  left:24px;
+  top:8px;
+  font-size:3vh;
 
+`;
 const Title = styled(motion.div)`
   position: absolute;
   top: 0;
@@ -97,77 +107,114 @@ const item = {
 };
 
 const CoverVideo = () => {
+  const {t,changeLanguage,language}=useTranslation()
+  const videoMarkup = `
+  <video
+    loop
+    muted
+    autoplay
+    playsinline
+    src="${MainVideo}"
+  ></video>
+`;
   return (
     <VideoContainer data-scroll>
-      <DarkOverlay />
+             {language=="en"? <Button onClick={()=>changeLanguage("fa")}>FA</Button>:
+                       <Button onClick={()=>changeLanguage("en")}>EN</Button>  }
+  
 
+              {/* <Button >En</Button> */}
+
+      <DarkOverlay />
       <Title variants={container} initial="hidden" animate="show">
-        <div>             
-           <motion.h1
-            variants={item}
-            data-scroll
-            data-scroll-delay="0.13"
-            data-scroll-speed="4"
-          >
-            C
-          </motion.h1>     
-          <motion.h1
-            variants={item}
-            data-scroll
-            data-scroll-delay="0.13"
-            data-scroll-speed="6"
-          >
-          h
-          </motion.h1>
- 
-          <motion.h1
-            variants={item}
-            data-scroll
-            data-scroll-delay="0.13"
-            data-scroll-speed="6"
-          >
-          e
-          </motion.h1>
-          <motion.h1
-            variants={item}
-            data-scroll
-            data-scroll-delay="0.13"
-            data-scroll-speed="6"
-          >
-          e
-          </motion.h1>
-          <motion.h1
-            variants={item}
-            data-scroll
-            data-scroll-delay="0.13"
-            data-scroll-speed="6"
-          >
-          s
-          </motion.h1>
-          <motion.h1
-            variants={item}
-            data-scroll
-            data-scroll-delay="0.13"
-            data-scroll-speed="6"
-          >
-          e
-          </motion.h1>
-        </div>
-        <div>             
+{   language=="en"?         <div>           
+      
+              <motion.h1
+                variants={item}
+                data-scroll
+                data-scroll-delay="0.13"
+                data-scroll-speed="4"
+              >
+                C
+              </motion.h1>     
+              <motion.h1
+                variants={item}
+                data-scroll
+                data-scroll-delay="0.13"
+                data-scroll-speed="6"
+              >
+              h
+              </motion.h1>
+    
+              <motion.h1
+                variants={item}
+                data-scroll
+                data-scroll-delay="0.13"
+                data-scroll-speed="6"
+              >
+              e
+              </motion.h1>
+              <motion.h1
+                variants={item}
+                data-scroll
+                data-scroll-delay="0.13"
+                data-scroll-speed="6"
+              >
+              e
+              </motion.h1>
+              <motion.h1
+                variants={item}
+                data-scroll
+                data-scroll-delay="0.13"
+                data-scroll-speed="6"
+              >
+              s
+              </motion.h1>
+              <motion.h1
+                variants={item}
+                data-scroll
+                data-scroll-delay="0.13"
+                data-scroll-speed="6"
+              >
+              e
+              </motion.h1>
+              
+            </div>:    
+            <>
+                      <motion.p
+                      variants={item}
+                      data-scroll
+                      data-scroll-delay="0.13"
+                      data-scroll-speed="6"
+                      style={{fontSize:"4vh"}}
+                    >
+                     رویداد
+                    </motion.p>      
+            <motion.h1
+                variants={item}
+                data-scroll
+                data-scroll-delay="0.13"
+                data-scroll-speed="6"
+                style={{fontSize:"12vh"}}
+              >
+               پنیر
+              </motion.h1></>  }
+       {language=="en" && <div>             
            <motion.h1
             variants={item}
             data-scroll
             data-scroll-delay="0.19"
             data-scroll-speed="4"
-            style={{fontSize:"3rem"}}
+            style={{fontSize:"3vh"}}
           >
-            Istgah
+            {"Event"}
+
           </motion.h1>     
 
  
 
 
-        </div>
+        </div>}
         {/* <motion.h2
           style={{ alignSelf: "flex-end" }}
           variants={item}
@@ -178,8 +225,9 @@ const CoverVideo = () => {
           cheese
         </motion.h2> */}
       </Title>
+      <div dangerouslySetInnerHTML={{ __html: videoMarkup }} />
 
-      <video src={MainVideo} type="video/mp4" autoPlay muted loop />
+      {/* <video src={MainVideo} type="video/mp4" autoPlay muted loop /> */}
     </VideoContainer>
   );
 };
