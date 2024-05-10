@@ -50,6 +50,7 @@ const Title = styled(motion.div)`
   right: 0;
   bottom: 0;
   z-index: 5;
+  font-family:Avini;
 
   display: flex;
   flex-direction: column;
@@ -63,7 +64,7 @@ const Title = styled(motion.div)`
   }
 
   h1 {
-    font-family: "Kaushan Script";
+    font-family:${(props) => props.language=="en"? "Kaushan Script":"Avini"} ;
     font-size: ${(props) => props.theme.fontBig};
     
     text-shadow: 1px 1px 1px ${(props) => props.theme.body};
@@ -126,7 +127,7 @@ const CoverVideo = () => {
               {/* <Button >En</Button> */}
 
       <DarkOverlay />
-      <Title variants={container} initial="hidden" animate="show">
+      <Title variants={container} initial="hidden" animate="show" language={language}>
 {   language=="en"?         <div>           
       
               <motion.h1
@@ -195,7 +196,7 @@ const CoverVideo = () => {
                 data-scroll
                 data-scroll-delay="0.13"
                 data-scroll-speed="6"
-                style={{fontSize:"12vh"}}
+                style={{fontSize:"16vh"}}
               >
                پنیر
               </motion.h1></>  }

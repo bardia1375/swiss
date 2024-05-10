@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
-import Logo from "../assets/Images/SwitzerlandLogo.png";
-import IstgahLogo from "../assets/Images/imagecompressor 2/Untitled design-min.png";
+import Logo from "../assets/Images/Swiss.png";
+import IstgahLogo from "../assets/Images/Istgah.png";
 import { useTranslation } from '../context/LanguageContext';
 
 
@@ -109,7 +109,7 @@ const Loader = () => {
       <Text variants={textVariants} initial="hidden" animate="visible">
         
       Istgah with cooperation of the Swiss Embassy presents:     </Text>
-      <div style={{display:"flex",alignItems:"center",justifyContent:"center",marginTop:"16px",gap:"24px"}}>
+      <div style={{display:"flex",alignItems:"center",justifyContent:"center",marginTop:"16px"}}>
       <img
           width="500"
           height="500"
@@ -117,7 +117,7 @@ const Loader = () => {
           alt="Wibe"
           data-scroll
           data-scroll-speed="2"
-          style={{width:"50px",height:"50px",marginTop:"16px"}}
+          style={{width:"80px",height:"80px"}}
         />
 
          <img
@@ -127,7 +127,7 @@ const Loader = () => {
           alt="Wibe"
           data-scroll
           data-scroll-speed="2"
-          style={{width:"50px",height:"50px"}}
+          style={{width:"100px",height:"100px"}}
         /></div>
     </Container>
   );

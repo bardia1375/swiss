@@ -30,10 +30,13 @@ const Left = styled.div`
   width: 50%;
   font-size: ${(props) => props.theme.fontlg};
   font-weight: 300;
+  font-family: ${(props) => props.language=="en"?"":"Avini"};
+
   position: relative;
   z-index: 5;
   margin-top: 20%;
   text-align:justify;
+  color:#fff;
   direction: ${(props) => props.language=="en"?"ltr":"rtl"};
   @media (max-width: 64em) {
     width: 80%;
@@ -48,14 +51,14 @@ const Left = styled.div`
     font-weight: 600;
 
     backdrop-filter: blur(2px);
-    background-color: ${(props) => `rgba(${props.theme.textRgba},0.4)`};
+    background-color: ${(props) => `rgba(0,0,0,0.5)`};
     border-radius: 20px;
   }
   @media (max-width: 48em) {
     font-size: ${(props) => props.theme.fontmd};
   }
   @media (max-width:  48em) {
-    font-size: 1.6vh;
+    font-size: ${(props) => props.language=="en"?"1.6vh":"1.8vh"};
     padding: 2rem;
     width: 70%;
   }
@@ -113,7 +116,7 @@ const Right = styled.div`
 
 const Title = styled.h1`
   font-size: ${(props) => props.theme.fontBig};
-  font-family: "Kaushan Script";
+  font-family:${(props) => props.language=="en"? "Kaushan Script":"Avini"} ;
   font-weight: 300;
   /* text-transform: capitalize; */
   color:#fff;
@@ -145,6 +148,7 @@ const About = () => {
         data-scroll
         data-scroll-speed="-2"
         data-scroll-direction="horizontal"
+        language={language}
       >
         {t("About Us")}
       </Title>

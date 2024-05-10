@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import React, {  useLayoutEffect, useRef } from 'react';
+import React, {  useLayoutEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
 import img2 from '../assets/Images/handlingMilk.jpeg';
@@ -13,6 +13,8 @@ import img6 from '../assets/Images/ShapingPressing.jpeg';
 import img7 from '../assets/Images/BrineBath.jpeg';
 import img8 from '../assets/Images/Maturation.jpeg';
 import img9 from '../assets/Images/Quality.jpeg';
+import { useEffect } from 'react';
+import { useTranslation } from '../context/LanguageContext';
 
 const Section = styled.section`
   min-height: 100vh;
@@ -75,12 +77,12 @@ const Container = styled.div`
   width: 25vw;
   height: auto;
   /* background-color: yellow; */
-
+  font-family:IranSans,
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  direction: ${(props) => props.language=="en"?"ltr":"rtl"};
   @media (max-width: 64em) {
   width: 30vw;
 
@@ -98,7 +100,7 @@ const Container = styled.div`
 
 const Title = styled(motion.h1)`
   font-size: ${(props) => props.theme.fontxxxl};
-  font-family: 'Kaushan Script';
+  font-family:${(props) => props.language=="en"? "Kaushan Script":"Avini"} ;
   font-weight: 300;
   /* text-transform: capitalize; */
   color: ${(props) => props.theme.body};
@@ -107,7 +109,6 @@ const Title = styled(motion.h1)`
   position: absolute;
   top: 1rem;
   z-index: 15;
-
   @media (max-width: 64em) {
     font-size: ${(props) => props.theme.fontxxl};
 
@@ -143,10 +144,13 @@ const Item = styled.div`
   margin: 2rem 0;
   
   h3 {
-    font-family:0.7rem;
+    font-size:${(props) => props.language=="en"? "3vh":"3vh"} ;
+    font-family:${(props) => props.language=="en"? "":"Avini"} ;
+
   }
 p{
   font-family:0.5rem;
+  font-family:IranSans;
 
 }
   img {
@@ -160,7 +164,7 @@ const Photos = ({ img, title ,description}) => {
   return (
     <Item>
       <img width="400" height="600" src={img} alt={title} />
-      <h3 style={{fontFamily:"0.75rem",marginTop:"8px",whiteSpace:"noWrap"}}>{title}</h3>
+      <h3 style={{whiteSpace:"noWrap"}}>{title}</h3>
       <p style={{fontFamily:"0.5rem",textAlign:"justify"}}>{description}</p>
     </Item>
   );
@@ -171,7 +175,7 @@ const NewArrival = () => {
   const ref = useRef(null);
 
   const ScrollingRef = useRef(null);
-
+ const {t,language}=useTranslation()
 
   useLayoutEffect(() => {
     let element = ref.current;
@@ -236,18 +240,40 @@ const NewArrival = () => {
 
 ]
 
+const HowToMakeFa=[
+  ,{img:img1 ,title:"1. ماده اولیه: شیر",description:"پنیرهای سوئیس از شیر تازه تولید می‌شود که توسط کشاورزان دو بار در روز به انبارها عرضه می‌شود. ویژگی‌های شیرها تا حدی عامل اصلی طعم و مزه‌ی نهایی پنیرها است."},
+  {img:img2 ,title:"2. انتخاب شیر و جابجایی شیر",description:"پس از تحویل، ابتدا شیر ازنظر کیفیت آزمایش می‌شود و سپس فیلتر می‌شود. کیفیت شیر و همچنین پاستوریزه بودن یا نبودن، به‌شدت آزمایش می‌شود – و به‌آرامی گرما داده می‌شود."},
+  {img:img3 ,title:"3. دلمه زدن شیر",description:"شیر را در قابلمه ریخته و همان‌طور که به‌تدریج گرم می‌شود هم می‌زنند. سپس باکتری‌های اسیدلاکتیک و مایه‌پنیر به آن اضافه می‌شوند تا فرآیند انعقاد آغاز شود. این عمل باعث ایجاد یک ماده ژله‌ای می‌شود."},
+  {img:img4 ,title:"4. فرآوری کشک",description:"حالا از الک پنیر، استفاده می‌کنیم؛ وسیله‌ای مخصوص که از آن برای برش کشک به قطعات کوچک استفاده می‌شود. این تکه‌های کشک نوع پنیر را تعیین می‌کنند که هر چه تکه‌های آن کوچک‌تر باشد، پنیر نهایی سخت‌تر می‌شود."},
+  {img:img5 ,title:"5. قبل از تشکیل کشک",description:"کشک‌ها را هم زده و گرم می‌کنند، هر چه پنیر سخت‌تر باشد، دما بالاتر می‌رود؛ بنابراین، پنیر به‌طور فزاینده‌ای جامد می‌شود."},
+  {img:img6 ,title:"6. شکل دادن و فشار دادن",description:"پس از رسیدن به سطح جامد مطلوب، پنیر را در قالب ریخته می‌شود. سوراخ‌های پایه قالب به آب‌پنیر اجازه خروج می‌دهد. علاوه بر این، کل پنیر فشرده می‌شود تا مایع اضافی خارج شود."},
+  {img:img7 ,title:"7. حمام آب‌نمک",description:"حمام آب‌نمک مرحله بعدی است: پنیر شناور نمک را جذب کرده و آب‌پنیر آزاد می‌کند. پوست به‌تدریج تشکیل می‌شود و طعم پنیر شدیدتر می‌شود."},
+  {img:img8 ,title:"8. رسیدن و عمل آمدن پنیر",description:"پنیر در طول زمان در انبار دستخوش تغییرات متعددی می‌شود: پوست رشد می‌کند، داخل پنیر تغییر رنگ می‌دهد، سوراخ‌هایی ایجاد می‌شود و پنیر جامد می‌شود."},
+  {img:img9,title:"9. کنترل کیفیت",description:"در مرحله آخر، پنیر تحت آزمایش‌های مختلفی قرار می‌گیرد. آن‌ها شامل بازرسی از تشکیل سوراخ، کیفیت پنیر، طعم و ظاهر خارجی هستند. سپس پنیر آماده فروش است."},
+
+
+]
+const [MakeCheese,setMakeCheese]=useState([])
+useEffect(()=>{
+if(language=="en"){
+  setMakeCheese(HowToMake)
+}else{
+  setMakeCheese(HowToMakeFa)
+}
+},[language])
   return (
     <Section  ref={ref} id="fixed-target" className="new-arrival">
       <Overlay />
 
       <Title
+       language={language}
         data-scroll-direction="horizontal"
       >
-        How Swiss cheese is made
+        {t("How Swiss cheese is made")}
       </Title>
 
-      <Container ref={ScrollingRef}>
-      {HowToMake.map((item)=>(
+      <Container ref={ScrollingRef} language={language}>
+      {MakeCheese.map((item)=>(
         <Photos img={item.img} title={item.title} description={item.description}/>
 
       ))}

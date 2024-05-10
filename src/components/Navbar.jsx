@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useLocomotiveScroll } from 'react-locomotive-scroll';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { useTranslation } from '../context/LanguageContext';
 
 const NavContainer = styled(motion.div)`
   position: absolute;
@@ -94,7 +95,7 @@ const Navbar = () => {
   const [click, setClick] = useState(false);
 
   const { scroll } = useLocomotiveScroll();
-
+   const {t}=useTranslation()
   const handleScroll = (id) => {
     let elem = document.querySelector(id);
     // console.log(elem);
@@ -120,7 +121,7 @@ const Navbar = () => {
         dragSnapToOrigin
       >
         <MenuBtn onClick={() => setClick(!click)}>
-          <span>MENU</span>
+          <span>{t("MENU")}</span>
         </MenuBtn>
         <Item
           whileHover={{ scale: 1.1, y: -5 }}
@@ -128,21 +129,21 @@ const Navbar = () => {
           onClick={() => handleScroll('#home')}
         >
           {' '}
-          <Link to="/">Home</Link>
+          <Link to="/">{t("Home")}</Link>
         </Item>
         <Item
           whileHover={{ scale: 1.1, y: -5 }}
           whileTap={{ scale: 0.9, y: 0 }}
           onClick={() => handleScroll('.about')}
         >
-          <Link to="/">about</Link>
+          <Link to="/">{t("About")}</Link>
         </Item>
         <Item
           whileHover={{ scale: 1.1, y: -5 }}
           whileTap={{ scale: 0.9, y: 0 }}
           onClick={() => handleScroll('#Cheeses')}
         >
-          <Link to="/">Cheeses</Link>
+          <Link to="/">{t("Cheeses")}</Link>
         </Item>
         <Item
           whileHover={{ scale: 1.1, y: -5 }}
@@ -150,7 +151,7 @@ const Navbar = () => {
           onClick={() => handleScroll('.new-arrival')}
         >
           {' '}
-          <Link to="/">How to made</Link>
+          <Link to="/">{t("How to made")}</Link>
         </Item>
       </MenuItems>
     </NavContainer>

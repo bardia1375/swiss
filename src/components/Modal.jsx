@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { useTranslation } from '../context/LanguageContext';
 
 const ModalBackdrop = styled(motion.div)`
   position: fixed;
@@ -16,19 +17,23 @@ const ModalBackdrop = styled(motion.div)`
 `;
 
 const ModalContent = styled(motion.div)`
-position:relative;
+  position:relative;
   background-color: white;
   overflow:auto;
   width:50vw;
-  height:80vh;
-  padding:30px;
+  height:auto;
+  padding:16px;
   max-height:800px;
   border-radius: 8px;
+  margin-top:-32px;
+  font-family:${(props) => props.language=="en"? "":"IRANSans"} ;
 
+  direction: ${(props) => props.language=="en"?"ltr":"rtl"};
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  
   @media (max-width: 40em) {
-    width:80vw;
-
+    width:90vw;
+    max-height:100vh;
   }
 `;
 const CloseButton = styled.button`
@@ -36,8 +41,8 @@ const CloseButton = styled.button`
   top: 3rem;
   right: 3rem;
   padding:16px;
- width:20px; 
-  height:20px; 
+ width:30px; 
+  height:30px; 
   display:flex;
   align-items:center;
   justify-content:center;
@@ -58,7 +63,8 @@ const CloseButton = styled.button`
     padding: 0.3rem;
   }
 `;
-const Modal = ({ showModal, closeModal, selectedIndex,children }) => {
+const Modal = ({ showModal, closeModal, selectedIndex,children,MapImg }) => {
+  const {language}=useTranslation()
   return (
     <>
       {showModal && (
@@ -70,11 +76,13 @@ const Modal = ({ showModal, closeModal, selectedIndex,children }) => {
         >
 
           <ModalContent
+            MapImg={MapImg}
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             exit={{ scale: 0 }}
             onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
             onScroll={(e) => e.stopPropagation()}
+            language={language}
           >
             <CloseButton onClick={closeModal}>X</CloseButton>
             {children}

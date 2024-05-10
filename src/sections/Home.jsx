@@ -14,7 +14,6 @@ const Section = styled.section`
   min-height: 100vh;
   overflow: hidden;
   z-index:10;
-
 `;
 
 const Home = () => {
