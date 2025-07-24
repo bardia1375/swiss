@@ -23,7 +23,7 @@ import Gilan from "../assets/Images/Gilan.png"
 import Kerman from "../assets/Images/Kerman.jpg"
 import Tabriz from "../assets/Images/Tabriz.png"
 import Logo from "../assets/Images/Swiss.png";
-import IstgahLogo from "../assets/Images/Istgah.png";
+import IstgahLogo from "../assets/Images/istgah.png";
 
 
 const Section = styled(motion.section)`

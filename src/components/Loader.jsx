@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
 import Logo from "../assets/Images/Swiss.png";
-import IstgahLogo from "../assets/Images/Istgah.png";
+import IstgahLogo from "../assets/Images/istgah.png";
 import { useTranslation } from '../context/LanguageContext';
 
 

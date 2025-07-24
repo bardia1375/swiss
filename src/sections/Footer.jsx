@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 import Logo from "../assets/Images/Swiss.png";
 import LogoFooter from "../assets/Images/switzercheese.jpeg";
-import IstgahLogo from "../assets/Images/Istgah.png";
+import IstgahLogo from "../assets/Images/istgah.png";
 import { useTranslation } from "../context/LanguageContext";
 
 import Boomi from "../assets/Images/Boomi.jpg";
